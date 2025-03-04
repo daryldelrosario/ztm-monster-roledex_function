@@ -1,17 +1,24 @@
-import { Component } from 'react';
 import CardList from './components/card-list/card-list';
 import SearchBox from './components/search-box/search-box';
-
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 const App = () => {
+  onSearchChange = (e) => {
+    const searchField = e.target.value.toLocaleLowerCase();
+
+  }
 
   return (
     <>
       <h1 className='app-title'>Monsters Roledex</h1>
+      <SearchBox
+        className='monsters-search-box'
+        onChangeHandler={onSearchChange}
+        placeholder='Search Monsters'
+      />
+
+
       {/* <SearchBox 
         className='monsters-search-box'
         onChangeHandler={onSearchChange} 
