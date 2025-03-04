@@ -7,13 +7,16 @@ import './App.css'
 
 const App = () => {
   const [searchField, setSearchField] = useState('');
-  console.log(searchField);
-
+  const [monsters, setMonsters] = useState([]);
 
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString);
   }
+
+  const filteredMonsters = monsters.filter((monster) => {
+    return monster.name.toLocaleLowerCase().includes(searchField);
+  })
 
   return (
     <>
@@ -23,14 +26,9 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder='Search Monsters'
       />
-
-
-      {/* <SearchBox 
-        className='monsters-search-box'
-        onChangeHandler={onSearchChange} 
-        placeholder='Search Monsters' 
+      <CardList 
+        monsters={filteredMonsters}
       />
-      <CardList monsters={filteredMonsters} /> */}
     </>
   );
 }
