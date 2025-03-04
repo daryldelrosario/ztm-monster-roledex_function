@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import CardList from './components/card-list/card-list';
 import SearchBox from './components/search-box/search-box';
-import { useState } from 'react'
 import './App.css'
 
 const App = () => {
-  onSearchChange = (e) => {
-    const searchField = e.target.value.toLocaleLowerCase();
+  const [searchField, setSearchField] = useState('');
+  console.log(searchField);
 
+
+  const onSearchChange = (e) => {
+    const searchFieldString = e.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
   }
 
   return (
