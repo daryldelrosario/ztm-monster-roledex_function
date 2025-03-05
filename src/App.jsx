@@ -27,10 +27,6 @@ const App = () => {
     setSearchField(searchFieldString);
   }
 
-  // const filteredMonsters = monsters.filter((monster) => {
-  //   return monster.name.toLocaleLowerCase().includes(searchField);
-  // })
-
   return (
     <>
       <h1 className='app-title'>Monsters Roledex</h1>
