@@ -4,16 +4,13 @@ import './card-list.css';
 const CardList = ({ monsters }) => {
 
   return (
-    <>
-      <div className='card-list'>
-        {monsters.map((monster) => {
-          return (
-            <Card monster={monster} />
-          )
-        })}
-
-      </div>
-    </>
+    <div className='card-list'>
+      {monsters.map((monster) => {
+        return (
+          <Card monster={monster} />
+        )
+      })}
+    </div>
   )
 }
 
